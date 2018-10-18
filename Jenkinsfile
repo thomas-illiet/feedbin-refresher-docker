@@ -118,7 +118,7 @@ def conditionalBuild (BuildType) {
         switch(BuildType) {
             case "Weekly":
                 dayOfWeek = sh(returnStdout: true, script: 'date +%u').trim()
-                if( ( jobCause == 'timer' || jobCause == 'pushtomaster' ) && dayOfWeek == '4' ) {
+                if( ( jobCause == 'timer' || jobCause == 'pushtomaster' ) && dayOfWeek == '7' ) {
                     return true
                 } else {
                     return false
@@ -127,7 +127,7 @@ def conditionalBuild (BuildType) {
             case "Monthly":
                 dayOfMonth = sh(returnStdout: true, script: 'date +%d').trim()
                 echo "dayofmonth : ${dayOfMonth}"
-                if( ( jobCause == 'timer' || jobCause == 'pushtomaster' ) && dayOfMonth == '18' ) {
+                if( ( jobCause == 'timer' || jobCause == 'pushtomaster' ) && dayOfMonth == '1' ) {
                     return true
                 } else {
                     return false
